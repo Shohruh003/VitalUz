@@ -91,7 +91,7 @@ export const Home = () => {
 
         <div className='liquid-div'>
           <h2 className='home-heading'>Buyurtma berish</h2>
-          <img src={WaterImg} alt="vital-water" width={500} height={300} />
+          <img className='WaterImg' src={WaterImg} alt="vital-water" width={500} height={300} />
 
           <form className='form'>
 

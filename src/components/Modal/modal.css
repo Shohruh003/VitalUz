@@ -1,0 +1,16 @@
+.overlay {
+  z-index: 3;
+  background-color: rgba(0,0,0,0.75);
+}
+
+.exit{
+  display: block;
+  margin-left: auto;
+}
+
+.ok{
+  display: block;
+  font-size: 32px;
+  padding: 0 15px;
+  margin-left: auto;
+}

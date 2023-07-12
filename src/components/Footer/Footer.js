@@ -6,9 +6,13 @@ import TelegramIcon from '../../Images/telegram.svg'
 import SertifikatIcon from '../../Images/certification.png'
 import SkachatDokIcon from '../../Images/free-icon-google-docs-2991108.png'
 import { Link } from 'react-router-dom'
+import { TrueModal } from '../Modal/TrueModal'
+import { useState } from 'react'
 
 
 export const Footer = () => {
+  const [trueModal, setTrueModal] = useState(false);
+
 
   return (
     <div className='footer'>
@@ -17,12 +21,14 @@ export const Footer = () => {
           <div className="footer-inner">
             <img className='site-logo' src={Logo} alt="Site-logo" width='50' height='30' />
 
-              <Link className='network-link' to=''>
+              <Link className='network-link document-link' to='' onClick={() => {
+              setTrueModal(true)
+            }}>
                 <img className='network-icon' src={SertifikatIcon} alt="network-icon" width='30' height='30' />
                 Sertifikat
               </Link>
 
-              <Link className='network-link' to='https://eco.delorean.uz/price/u/1689056168258.pdf'>
+              <Link className='network-link document-link' to='https://eco.delorean.uz/price/u/1689056168258.pdf'>
                 <img className='network-icon' src={SkachatDokIcon} alt="network-icon" width='30' height='30' />
                 Skachat dokument
               </Link>
@@ -42,6 +48,8 @@ export const Footer = () => {
                 <img className='network-icon' src={TelegramIcon} alt="network-icon" width='30' height='30' />
                 Telegram
               </Link>
+
+              <TrueModal trueModal={trueModal} setTrueModal={setTrueModal} />
             </div>
           </div>
         </div>

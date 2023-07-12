@@ -20,6 +20,14 @@
   text-decoration: none;
 }
 
+.network-link:hover{
+  color: #4973ff;
+}
+
+.network-link:active{
+  color: white;
+}
+
 .footer-networks{
   margin-right: 100px;
 }
@@ -27,4 +35,41 @@
 .footer {
   padding: 40px 40px;
   background-color: rgb(168, 211, 247);
+}
+
+/* ================================ responsive ========================== */
+
+@media screen and (max-width: 1000px) {
+  .network-link{
+    font-size: 16px;
+  }
+
+  .footer-networks{
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .footer-inner {
+    display: block;
+    text-align: center;
+  }
+
+  .network-link{
+    font-size: 16px;
+  }
+
+  .footer-networks{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+    margin-right: 0;
+  }
+
+  .document-link {
+    margin-left: 50px;
+    margin-top: 30px;
+  }
 }

@@ -146,3 +146,95 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+/* ===================== responsive ======================== */
+
+@media screen and (max-width: 770px) {
+  .accordion-listItem p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .accordion-listItem p {
+    font-size: 14px;
+  }
+
+  .home-text , .home-bigtext{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .WaterImg {
+    width: 400px;
+    height: 200px;
+  }
+
+  .accordion-listItem p {
+    font-size: 12px;
+  }
+
+  .accordion-name{
+    font-size: 18px;
+  }
+
+  .home-text , .home-bigtext{
+    font-size: 16px;
+  }
+
+  .button{
+    width: 180px;
+    padding: 15px 35px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .WaterImg {
+    width: 350px;
+    height: 175px;
+  }
+
+  .accordion-listItem p {
+    font-size: 10px;
+  }
+
+  .button{
+    width: 150px;
+    padding: 10px 25px;
+  }
+
+  .button span {
+    font-size: 16px;
+  }
+
+  .button .liquid {
+    top: -90px;
+  }
+
+  .form-group {
+    margin-top: 30px;
+  }
+  
+  .form-input {
+    width: 150px;
+  }
+  
+  .form-input label {
+    font-size: 18px;
+  }
+
+  .form-input input {
+    font-size: 14px;
+  }
+
+  .home-text , .home-bigtext{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .accordion-listItem p {
+    font-size: 8px;
+  }
+}
