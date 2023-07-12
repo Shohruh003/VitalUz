@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Loader from './Loader/IMG_2945.mp4';
+import { useEffect, useState } from 'react';
+import { Home } from './Pages/Home/Home';
+import { Footer } from './components/Footer/Footer';
+import { Header } from './components/Header/Header';
 
 function App() {
+
+  const [loading, setLoading ] = useState(false)
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2800)
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        loading?
+        <video className='loader' src={Loader} autoPlay loop muted/>
+        :
+        <div>
+          <Header/>
+          <Home/>
+          <Footer/>
+        </div>
+      }
     </div>
   );
 }

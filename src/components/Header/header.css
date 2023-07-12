@@ -1,0 +1,29 @@
+.header {
+  padding-top: 20px;
+}
+
+.header-hero{
+  display: flex;
+  justify-content: space-around;
+}
+
+.headWater {
+  width: 100%;
+  height: 150px;
+}
+
+.headVater {
+  width: 600px;
+  height: 400px;
+}
+
+.header-text{
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+  padding: 15px 15px;
+  text-align: center;
+  border-radius:0 0 20px 20px;
+  color: white;
+  background-color: #4973ff;
+}
