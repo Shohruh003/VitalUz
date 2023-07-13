@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import TrueIcon from '../../Images/true.png'
+// import TrueIcon from '../../Images/true.png'
+import Guvohnoma from '../../Images/guvohnoma-img.jpg'
 import "./modal.css";
 
 export const TrueModal = ({trueModal , setTrueModal}) => {
@@ -31,8 +32,8 @@ export const TrueModal = ({trueModal , setTrueModal}) => {
     ref={elTrueOverlay}
     onClick={closeTrueModal} 
     className={`overlay position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center ${!trueModal && 'd-none'}`}>
-      <div className="modal-main w-50 bg-white p-4 text-center">
-          <img src={TrueIcon} alt="true-icon" width='200' height='200' />
+      <div className="modal-main w-25 bg-white p-4 text-center">
+          <img className="guvohnoma" src={Guvohnoma} alt="true-icon" />
           <button onClick={() => {
             setTrueModal(false) 
             window.location.reload()

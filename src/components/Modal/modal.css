@@ -10,7 +10,12 @@
 
 .ok{
   display: block;
-  font-size: 32px;
+  font-size: 24px;
   padding: 0 15px;
   margin-left: auto;
+}
+
+.guvohnoma {
+  width: 100%;
+  height: auto;
 }
