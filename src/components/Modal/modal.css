@@ -19,3 +19,37 @@
   width: 100%;
   height: auto;
 }
+
+.guvohnomaModal {
+  width: 25%;
+  padding: 20px;
+  background: white;
+  text-align: center;
+}
+
+
+/* ===================== responsive ============ */
+
+@media screen and (max-width: 1000px) {
+  .guvohnomaModal {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .guvohnomaModal {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .guvohnomaModal {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .guvohnomaModal {
+    width: 60%;
+  }
+}
