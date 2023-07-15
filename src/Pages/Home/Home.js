@@ -2,11 +2,12 @@ import { Accordion } from 'react-bootstrap'
 import './home.css'
 import WaterImg from '../../Images/header-vital-removebg-preview.png'
 import { useState } from 'react'
-
+import TimeOut from '../../components/TimeOut/TimeOut'
 
 export const Home = () => {
   const [quantity, setQuantity] = useState();
   const [price, setPrice] = useState();
+  const [isDivVisible, setIsDivVisible] = useState(false);
 
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
@@ -98,7 +99,7 @@ export const Home = () => {
                 <div className='form-group'>
                   <div className='form-input'>
                     <label className='mb-1' htmlFor="quantity">Miqdori</label>
-                    <input className='form-control mb-4' type="number" name="number" placeholder='miqdori' id="quantity" defaultValue={quantity} onChange={handleQuantityChange} min={1} />
+                    <input className='form-control mb-4' type="number" name="number" placeholder='miqdori' id="quantity" defaultValue={quantity} onChange={handleQuantityChange} min='3' />
                   </div>
               
               
@@ -108,11 +109,15 @@ export const Home = () => {
                   </div>
                 </div>
 
-                <button className='button'>
+                <button onClick={(event) => {
+                  event.preventDefault();
+                  setIsDivVisible(true)
+                }} className='button'>
                   <span>Send</span>
                   <div className='liquid'></div>
                 </button>
-            
+                
+                <TimeOut isDivVisible={isDivVisible} setIsDivVisible={setIsDivVisible}/>
 
               </form>
         </div>

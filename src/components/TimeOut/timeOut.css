@@ -1,0 +1,73 @@
+.timeOut {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  padding: 10px 7px;
+  border: 1px solid #4973ff;
+  background-color: rgba(73, 115, 255, 0.7);
+  border-radius: 20px;
+}
+
+.timeOut p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.timeOut button {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(203, 92, 92);
+}
+
+.timeOut button:hover {
+  background-color: rgb(213, 110, 110);
+}
+
+.timeOut button:active {
+  background-color: rgb(219, 128, 128);
+}
+
+
+/* ============== responsive ==================== */
+
+@media screen and (max-width: 800px) {
+  .timeOut {
+    width: 180px;
+  }
+  
+  .timeOut p {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeOut {
+    width: 150px;
+  }
+  
+  .timeOut p {
+    font-size: 14px;
+  }
+
+  .timeOut button {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .timeOut {
+    width: 120px;
+  }
+  
+  .timeOut p {
+    font-size: 10px;
+  }
+
+  .timeOut button {
+    font-size: 10px;
+  }
+}
