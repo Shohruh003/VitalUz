@@ -45,10 +45,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .timeOut {
-    width: 150px;
-  }
-  
+
   .timeOut p {
     font-size: 14px;
   }
