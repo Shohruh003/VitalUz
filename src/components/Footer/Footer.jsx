@@ -6,12 +6,12 @@ import TelegramIcon from '../../Images/telegram.svg'
 import SertifikatIcon from '../../Images/certification.png'
 import SkachatDokIcon from '../../Images/free-icon-google-docs-2991108.png'
 import { Link } from 'react-router-dom'
-import { TrueModal } from '../Modal/TrueModal'
+import { GuvohnomaModal } from '../Modal/GuvohnomaModal'
 import { useState } from 'react'
 
 
 export const Footer = () => {
-  const [trueModal, setTrueModal] = useState(false);
+  const [guvohnomaModal, setGuvohnomaModal] = useState(false);
 
 
   return (
@@ -22,7 +22,7 @@ export const Footer = () => {
             <img className='site-logo' src={Logo} alt="Site-logo" width='50' height='30' />
 
               <Link className='network-link document-link' to='' onClick={() => {
-              setTrueModal(true)
+              setGuvohnomaModal(true)
             }}>
                 <img className='network-icon' src={SertifikatIcon} alt="network-icon" width='30' height='30' />
                 Sertifikat
@@ -49,7 +49,7 @@ export const Footer = () => {
                 Telegram
               </Link>
 
-              <TrueModal trueModal={trueModal} setTrueModal={setTrueModal} />
+              <GuvohnomaModal guvohnomaModal={guvohnomaModal} setGuvohnomaModal={setGuvohnomaModal} />
             </div>
           </div>
         </div>

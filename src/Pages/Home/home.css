@@ -35,12 +35,27 @@
   font-size: 20px;
 }
 
+.accordion-listItem .starting-number {
+  margin-right: 310px;
+}
+
+
 .accordion-listItem{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 10px;
   border-bottom: 1px solid  rgb(138, 138, 232);
+}
+
+.accardion-item {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.accardion-item p {
+  margin-right: 100px;
 }
 
 .home-text , .home-bigtext{
@@ -190,6 +205,10 @@
 }
 
 @media screen and (max-width: 450px) {
+
+  th, td {
+    font-size: 12px;
+  }
   .WaterImg {
     width: 350px;
     height: 175px;
