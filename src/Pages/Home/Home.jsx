@@ -177,6 +177,11 @@ console.log(client);
                   <p>Tel:</p>
                   <p className='phone'>{client?.phones}</p>
                 </li>
+
+                <li className="accordion-listItem">
+                  <p>Passport:</p>
+                  <p className='passport'>{client?.passport_serial}</p>
+                </li>
               </ul>
             </Accordion.Body>
           </Accordion.Item>
