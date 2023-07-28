@@ -2,10 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import "./modal.css";
 import { Check } from "../../Hooks/Check";
 import { Loader } from "../../Hooks/Loader";
+import { Link } from "react-router-dom";
+import { GuvohnomaModal } from "./GuvohnomaModal";
 
 export const Contract = ({contract , setContract}) => {
- const {check, setCheck} = Check()
- const {setLoader} = Loader()
+  const [guvohnomaModal, setGuvohnomaModal] = useState(false);
+
+  const {check, setCheck} = Check()
+  const {setLoader} = Loader()
 
   const elContractOverlay = useRef();
   const closeContract = (evt) => {
@@ -63,20 +67,28 @@ export const Contract = ({contract , setContract}) => {
     setLoader(true)
     setTimeout(() => {
       setLoader(false)
-    }, 1)
+    }, 23467)
     } 
   }
 
   return (
     <div 
-    ref={elContractOverlay}
-    onClick={closeContract}
-    className={`overlay position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center ${!contract && 'd-none'}`}>
+      ref={elContractOverlay}
+      onClick={closeContract}
+      className={`overlay position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center ${!contract && 'd-none'}`}>
       <div className="modal-main guvohnomaModal">
           <label className="checkLabel" htmlFor="confirm">
             <input className="checkbox" type="checkbox" id="confirm" name="confirm" checked={check} onChange={() => setCheck(!check)} />
             Ha, ommaviy ofertalarga roziman
           </label>
+          <p>Batafsil ko'rish:</p>
+          <Link className='shartnoma-link' to='https://sg.docs.wps.com/l/sIPDAvJVrs_qDpgY?v=v2'>
+                Uzb
+          </Link>
+          <Link className='shartnoma-link' to='https://sg.docs.wps.com/l/sIKPAvJVr5vqDpgY?v=v2'>
+                Rus
+          </Link>
+
           <button onClick={handleSubmit} className="btn btn-primary ok" type="submit">Ok</button>
       </div>
     </div>

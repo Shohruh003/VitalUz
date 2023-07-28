@@ -28,7 +28,7 @@ export const Footer = () => {
                 Sertifikat
               </Link>
 
-              <Link className='network-link document-link' to='https://eco.delorean.uz/price/u/1689056168258.pdf'>
+              <Link className='network-link document-link' to='https://sg.docworkspace.com/l/sIOjuw73OAdz3g6YG'>
                 <img className='network-icon' src={SkachatDokIcon} alt="network-icon" width='30' height='30' />
                 Skachat dokument
               </Link>

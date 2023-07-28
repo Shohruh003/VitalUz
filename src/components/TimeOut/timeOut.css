@@ -29,6 +29,9 @@
   background-color: rgb(219, 128, 128);
 }
 
+.timeOut .timeOut-btn {
+  padding: 5px 20px;
+}
 
 /* ============== responsive ==================== */
 

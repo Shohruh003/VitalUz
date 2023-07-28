@@ -7,26 +7,33 @@ import { Contract } from '../../components/Modal/Contract'
 import { Check } from '../../Hooks/Check'
 import { TrueModal } from '../../components/Modal/TrueModal'
 import TimeOut from '../../components/TimeOut/TimeOut'
+import { Client } from '../../Hooks/Client'
 
 export const Home = () => {
   const {check} = Check()
   const [quantity, setQuantity] = useState();
   const [price, setPrice] = useState();
   const [isDivVisible, setIsDivVisible] = useState(false);
-  const [client, setClient] = useState()
+  const {client, setClient} = Client()
   const [contract, setContract] = useState(false)
   const [trueModal, setTrueModal] = useState(false);
   const [buy, setBuy] = useState()
-console.log(client);
   
+
+  const queryParameters = new URLSearchParams(window.location.search)
+  const code = queryParameters.get("code")
+
+
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
   };
 
   const handleQuantityChange = (event) => {
+    if (event.target.value < 3) {
+      event.target.value = 3  
+    }
     setQuantity(event.target.value);
-    const priceNumber = 10
-    setPrice(event.target.value * priceNumber);
+    setPrice(event.target.value * client?.price);
   };
 
 
@@ -44,7 +51,7 @@ console.log(client);
         "login": "site_user",
         "password": "x]sh9fD/mSZGHQ=V"
       },
-      "counterparty": "9147",
+      "counterparty": code,
       "signed": check
     })
   };
@@ -68,8 +75,8 @@ console.log(client);
             "password": "water01"
         },
         "counterparty": {
-            "name": "993002747/909718922/981286286",
-            "code": "978"
+          
+            "code": code
         },
         "dateN": "04.11.2001",
         "dateK": "31.12.2028"
@@ -83,8 +90,14 @@ console.log(client);
 
   const orderSubmit = (event) => {
     event.preventDefault()
-    
-    if (client.Signed === true) {
+  localStorage.setItem('isDivVisible', JSON.stringify(true));  
+
+        
+    if (client.Signed === !true) {
+      setContract(true)
+
+    } else {
+      setIsDivVisible(true)
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
       myHeaders.append("Authorization", "Basic UGxhbnNoZXRVc2VyOlVTUkA2NTAxNTU5");
@@ -110,10 +123,6 @@ console.log(client);
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-
-        setIsDivVisible(true)
-    } else {
-      setContract(true)
     }
   }
 
@@ -148,7 +157,7 @@ console.log(client);
 
                 <li className="accordion-listItem">
                   <p>Tel:</p>
-                  <p className='phone'>999048080</p>
+                  <p className='phone'>+99870-202-8080 <br /> +99899-904-8080 <br /> +99899-914-8080</p>
                 </li>
               </ul>
             </Accordion.Body>
@@ -255,7 +264,7 @@ console.log(client);
           <br /> <br />
           Xaridor ushbu Shartnomada nazarda tutilgan tartibda va muddatlarda sotuvchidan Tovarni qabul qilishi, ushbu Shartnomada nazarda tutilgan tartibda va muddatlarda Tovar haqini to'lashi shart. 
           <br /> <br />
-          Mazkur Shartnoma bo‘yicha o‘tkazilgan Tovar va yetkazib berish xizmatlari narxi: 28 000 (Yigirma sakkiz 
+          Mazkur Shartnoma bo‘yicha o‘tkazilgan Tovar va yetkazib berish xizmatlari narxi: {client?.price} (Yigirma sakkiz 
           ming) so‘m.
           <br /><br />
           To'lov sanasi Xaridor tomonidan sotuvchiga naqd pul o'tkazilgan sana yoki sotuvchining hisob raqamiga pul mablag'lari kelib tushgan sana hisoblanadi.

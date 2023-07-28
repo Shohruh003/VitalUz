@@ -7,13 +7,16 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CheckProvider } from './context/CheckContext';
 import { LoaderProvider } from './context/LoaderContext';
+import { ClientProvider } from './context/ClientContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <CheckProvider>
       <LoaderProvider>
-        <App />
+        <ClientProvider>
+          <App />
+        </ClientProvider>
       </LoaderProvider>
     </CheckProvider>
   </Router>
