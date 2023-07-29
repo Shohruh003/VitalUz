@@ -18,8 +18,6 @@ export const Home = () => {
   const [contract, setContract] = useState(false)
   const [trueModal, setTrueModal] = useState(false);
   const [buy, setBuy] = useState()
-  
-
   const queryParameters = new URLSearchParams(window.location.search)
   const code = queryParameters.get("code")
 
@@ -76,7 +74,7 @@ export const Home = () => {
         },
         "counterparty": {
           
-            "code": code
+            "code": code,
         },
         "dateN": "04.11.2001",
         "dateK": "31.12.2028"
@@ -93,7 +91,7 @@ export const Home = () => {
   localStorage.setItem('isDivVisible', JSON.stringify(true));  
 
         
-    if (client.Signed === !true) {
+    if (client.signed === !true) {
       setContract(true)
 
     } else {

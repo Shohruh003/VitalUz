@@ -1,15 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./modal.css";
 import { Check } from "../../Hooks/Check";
-import { Loader } from "../../Hooks/Loader";
 import { Link } from "react-router-dom";
-import { GuvohnomaModal } from "./GuvohnomaModal";
 
 export const Contract = ({contract , setContract}) => {
-  const [guvohnomaModal, setGuvohnomaModal] = useState(false);
+  const queryParameters = new URLSearchParams(window.location.search)
+  const code = queryParameters.get("code")
 
   const {check, setCheck} = Check()
-  const {setLoader} = Loader()
 
   const elContractOverlay = useRef();
   const closeContract = (evt) => {
@@ -46,7 +44,7 @@ export const Contract = ({contract , setContract}) => {
         "login": "site_user",
         "password": "x]sh9fD/mSZGHQ=V"
       },
-      "counterparty": "9147",
+      "counterparty": code,
       "signed": check
     });
     
@@ -63,12 +61,10 @@ export const Contract = ({contract , setContract}) => {
       .catch(error => console.log('error', error));
 
     setContract(false)
-
-    setLoader(true)
-    setTimeout(() => {
-      setLoader(false)
-    }, 23467)
     } 
+
+window.location.reload();
+
   }
 
   return (

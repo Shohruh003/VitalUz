@@ -72,7 +72,6 @@ const handleButton = () => {
   handleStart()
   setIsDiv(false);
 window.location.reload();
-
 };
 
 return (
