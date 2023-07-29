@@ -10,6 +10,8 @@ import TimeOut from '../../components/TimeOut/TimeOut'
 import { Client } from '../../Hooks/Client'
 
 export const Home = () => {
+
+
   const {check} = Check()
   const [quantity, setQuantity] = useState();
   const [price, setPrice] = useState();
@@ -20,6 +22,7 @@ export const Home = () => {
   const [buy, setBuy] = useState()
   const queryParameters = new URLSearchParams(window.location.search)
   const code = queryParameters.get("code")
+
 
 
   const handlePriceChange = (event) => {
@@ -33,7 +36,6 @@ export const Home = () => {
     setQuantity(event.target.value);
     setPrice(event.target.value * client?.price);
   };
-
 
   useEffect(() => {
     
@@ -91,11 +93,14 @@ export const Home = () => {
   localStorage.setItem('isDivVisible', JSON.stringify(true));  
 
         
-    if (client.signed === !true) {
+    if (client?.signed === !true) {
       setContract(true)
 
     } else {
       setIsDivVisible(true)
+      document.getElementById("quantity").value = "";
+      document.getElementById("price").value = "";
+      
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
       myHeaders.append("Authorization", "Basic UGxhbnNoZXRVc2VyOlVTUkA2NTAxNTU5");
@@ -105,7 +110,7 @@ export const Home = () => {
           "login": "site_user",
           "password": "x]sh9fD/mSZGHQ=V"
         },
-        "counterparty": "9147",
+        "counterparty": code,
         "quantity": quantity,
         "delivery_time": "ДоОбеда"
       });

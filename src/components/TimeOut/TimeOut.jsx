@@ -3,20 +3,19 @@ import './timeOut.css'
 
 function TimeOut({isDivVisible, setIsDivVisible}) {
   const [isDiv, setIsDiv] = useState(false)
-
+  const [currentTime, setCurrentTime] = useState(0);
+  const [extraTime, setExtraTime] = useState(0);
   const [countdown, setCountdown] = useState(36 * 60 * 60 * 1000);
   const [deliveryTime, setDeliveryTime] = useState(
     localStorage.getItem("count") || 0
   );
-  const [currentTime, setCurrentTime] = useState(0);
 
-  const [extraTime, setExtraTime] = useState(0);
 
-  const handleStart = () => {
+  const handleStart =() => {
     localStorage.setItem("count", new Date().getTime() + countdown);
     setDeliveryTime(new Date().getTime() + countdown);
   };
-
+  
   const handleStop = () => {
     setExtraTime(countdown - currentTime);
     setCurrentTime(0);
