@@ -4,6 +4,6 @@ import { CheckContext } from "../context/CheckContext";
 
 
 export const Check = () => {
-  const {check, setCheck} = useContext(CheckContext);
-  return {check, setCheck}
+  const {isChecked, setIsChecked} = useContext(CheckContext);
+  return {isChecked, setIsChecked}
 }

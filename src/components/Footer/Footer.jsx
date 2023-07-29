@@ -28,23 +28,23 @@ export const Footer = () => {
                 Sertifikat
               </Link>
 
-              <Link className='network-link document-link' to='https://sg.docworkspace.com/l/sIOjuw73OAdz3g6YG'>
+              <Link className='network-link document-link' target="_blank" to='https://sg.docworkspace.com/l/sIOjuw73OAdz3g6YG'>
                 <img className='network-icon' src={SkachatDokIcon} alt="network-icon" width='30' height='30' />
                 Skachat dokument
               </Link>
 
             <div className="footer-networks">
-              <Link className='network-link' to='http://instagram.com/Vital.uzb'>
+              <Link className='network-link' target="_blank" to='http://instagram.com/Vital.uzb'>
                 <img className='network-icon' src={InstagramIcon} alt="network-icon" width='30' height='30' />
                 Instagram
               </Link>
 
-              <Link className='network-link' to='http://fb.com/Vital.uzb'>
+              <Link className='network-link' target="_blank" to='http://fb.com/Vital.uzb'>
                 <img className='network-icon' src={FacebookIcon} alt="network-icon" width='30' height='30' />
                 Facebook
               </Link>
 
-              <Link className='network-link' to='https://t.me/Vitaluzbekistan'>
+              <Link className='network-link' target="_blank" to='https://t.me/Vitaluzbekistan'>
                 <img className='network-icon' src={TelegramIcon} alt="network-icon" width='30' height='30' />
                 Telegram
               </Link>

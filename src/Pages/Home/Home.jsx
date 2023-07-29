@@ -23,7 +23,7 @@ export const Home = () => {
   };
 
 
-  const {check} = Check()
+  const {isChecked} = Check()
   const [quantity, setQuantity] = useState();
   const [price, setPrice] = useState();
   const [isDivVisible, setIsDivVisible] = useState(false);
@@ -63,7 +63,7 @@ export const Home = () => {
         "password": "x]sh9fD/mSZGHQ=V"
       },
       "counterparty": code,
-      "signed": check
+      "signed": isChecked
     })
   };
 

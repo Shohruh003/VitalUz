@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./modal.css";
 import { Check } from "../../Hooks/Check";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ export const Contract = ({contract , setContract}) => {
   const queryParameters = new URLSearchParams(window.location.search)
   const code = queryParameters.get("code")
 
-  const {check, setCheck} = Check()
+  const {isChecked, setIsChecked} = Check()
 
   const elContractOverlay = useRef();
   const closeContract = (evt) => {
@@ -31,10 +31,17 @@ export const Contract = ({contract , setContract}) => {
     return () => window.removeEventListener('keyup', handleCloseContract)
   },[contract])
 
+
+
+  function handleCheckboxChange(event) {
+    setIsChecked(event.target.checked);
+  }
+
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    if (check) {
+    if (isChecked) {
       var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", "Basic UGxhbnNoZXRVc2VyOlVTUkA2NTAxNTU5");
@@ -45,7 +52,7 @@ export const Contract = ({contract , setContract}) => {
         "password": "x]sh9fD/mSZGHQ=V"
       },
       "counterparty": code,
-      "signed": check
+      "signed": isChecked
     });
     
     var requestOptions = {
@@ -61,7 +68,7 @@ export const Contract = ({contract , setContract}) => {
       .catch(error => console.log('error', error));
 
     setContract(false)
-    } 
+    }
 
 window.location.reload();
 
@@ -74,18 +81,18 @@ window.location.reload();
       className={`overlay position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center ${!contract && 'd-none'}`}>
       <div className="modal-main guvohnomaModal">
           <label className="checkLabel" htmlFor="confirm">
-            <input className="checkbox" type="checkbox" id="confirm" name="confirm" checked={check} onChange={() => setCheck(!check)} />
+            <input className="checkbox" type="checkbox" id="myCheckbox" onChange={handleCheckboxChange} name="confirm" />
             Ha, ommaviy ofertalarga roziman
           </label>
           <p>Batafsil ko'rish:</p>
-          <Link className='shartnoma-link' to='https://sg.docs.wps.com/l/sIPDAvJVrs_qDpgY?v=v2'>
+          <Link className='shartnoma-link' target="_blank" to='https://sg.docs.wps.com/l/sIPDAvJVrs_qDpgY?v=v2'>
                 Uzb
           </Link>
-          <Link className='shartnoma-link' to='https://sg.docs.wps.com/l/sIKPAvJVr5vqDpgY?v=v2'>
+          <Link className='shartnoma-link' target="_blank" to='https://sg.docs.wps.com/l/sIKPAvJVr5vqDpgY?v=v2'>
                 Rus
           </Link>
 
-          <button onClick={handleSubmit} className="btn btn-primary ok" type="submit">Ok</button>
+          <button id="myButton" disabled={!isChecked} onClick={handleSubmit} className="btn btn-primary ok" type="submit">Ok</button>
       </div>
     </div>
   )
