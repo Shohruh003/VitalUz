@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './timeOut.css'
 
-function TimeOut({isDivVisible, setIsDivVisible}) {
+function TimeOut(props) {
+  const { deliveryTime, countdown, isDivVisible, setIsDivVisible } = props;
   const [isDiv, setIsDiv] = useState(false)
   const [currentTime, setCurrentTime] = useState(0);
   const [extraTime, setExtraTime] = useState(0);
-  const [countdown, setCountdown] = useState(36 * 60 * 60 * 1000);
-  const [deliveryTime, setDeliveryTime] = useState(
-    localStorage.getItem("count") || 0
-  );
 
-
-  const handleStart =() => {
-    localStorage.setItem("count", new Date().getTime() + countdown);
-    setDeliveryTime(new Date().getTime() + countdown);
-  };
   
   const handleStop = () => {
     setExtraTime(countdown - currentTime);
@@ -68,7 +60,6 @@ function TimeOut({isDivVisible, setIsDivVisible}) {
   };
 
 const handleButton = () => {
-  handleStart()
   setIsDiv(false);
 window.location.reload();
 };

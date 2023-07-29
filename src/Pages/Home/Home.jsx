@@ -11,6 +11,17 @@ import { Client } from '../../Hooks/Client'
 
 export const Home = () => {
 
+  const [countdown, setCountdown] = useState(36 * 60 * 60 * 1000);
+  const [deliveryTime, setDeliveryTime] = useState(
+    localStorage.getItem("count") || 0
+  );
+
+
+  const handleStart =() => {
+    localStorage.setItem("count", new Date().getTime() + countdown);
+    setDeliveryTime(new Date().getTime() + countdown);
+  };
+
 
   const {check} = Check()
   const [quantity, setQuantity] = useState();
@@ -97,6 +108,7 @@ export const Home = () => {
       setContract(true)
 
     } else {
+      handleStart()
       setIsDivVisible(true)
       document.getElementById("quantity").value = "";
       document.getElementById("price").value = "";
@@ -257,8 +269,7 @@ export const Home = () => {
 
                 <Contract contract={contract} setContract={setContract}/>
               <TrueModal trueModal={trueModal} setTrueModal={setTrueModal} />
-              <TimeOut isDivVisible={isDivVisible} setIsDivVisible={setIsDivVisible}/>
-                
+              <TimeOut isDivVisible={isDivVisible} setIsDivVisible={setIsDivVisible} deliveryTime={deliveryTime} countdown={countdown}/>
               </form>
         </div>
 
