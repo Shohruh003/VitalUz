@@ -3,16 +3,18 @@ import Logo from '../../Images/logo.svg'
 import InstagramIcon from '../../Images/instagram.svg'
 import FacebookIcon from '../../Images/facebook.svg'
 import TelegramIcon from '../../Images/telegram.svg'
-import SertifikatIcon from '../../Images/certification.png'
+import GuvohnomaIcon from '../../Images/certification.png'
 import SkachatDokIcon from '../../Images/free-icon-google-docs-2991108.png'
+import SertifikatIcon from '../../Images/sertifikat-Icon.png'
 import { Link } from 'react-router-dom'
 import { GuvohnomaModal } from '../Modal/GuvohnomaModal'
 import { useState } from 'react'
+import { Sertifikat } from '../Modal/Sertifikat'
 
 
 export const Footer = () => {
   const [guvohnomaModal, setGuvohnomaModal] = useState(false);
-
+  const [sertifikat, setSertifikat] = useState(false);
 
   return (
     <div className='footer'>
@@ -23,6 +25,13 @@ export const Footer = () => {
 
               <Link className='network-link document-link' to='' onClick={() => {
               setGuvohnomaModal(true)
+            }}>
+                <img className='network-icon' src={GuvohnomaIcon} alt="network-icon" width='30' height='30' />
+                Guvohnoma
+              </Link>
+
+              <Link className='network-link document-link' to='' onClick={() => {
+              setSertifikat(true)
             }}>
                 <img className='network-icon' src={SertifikatIcon} alt="network-icon" width='30' height='30' />
                 Sertifikat
@@ -50,6 +59,7 @@ export const Footer = () => {
               </Link>
 
               <GuvohnomaModal guvohnomaModal={guvohnomaModal} setGuvohnomaModal={setGuvohnomaModal} />
+              <Sertifikat sertifikat={sertifikat} setSertifikat={setSertifikat}/>
             </div>
           </div>
         </div>
