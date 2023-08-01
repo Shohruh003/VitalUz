@@ -20,7 +20,7 @@ export const Private = () => {
     <div>
       {
         loading?
-        <video className='loader' src={Loading} controls autoPlay loop muted playsInline/>
+        <video className='loader' src={Loading} autoPlay loop muted playsInline/>
         :
         <div>
           <Header/>
