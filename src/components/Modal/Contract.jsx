@@ -79,10 +79,6 @@ export const Contract = ({contract , setContract }) => {
       className={`overlay position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center ${!contract && 'd-none'}`}>
       <div className="modal-main guvohnomaModal">
           <p>Vital World korxonasi shartnomasi bilan tanishish</p>
-          <label className="checkLabel" htmlFor="confirm">
-            <input className="checkbox" type="checkbox" id="myCheckbox" onChange={handleCheckboxChange} name="confirm" />
-            Ha, tanihdim
-          </label>
           <p>Tanishaman:</p>
           <Link className='shartnoma-link' target="_blank" to='https://sg.docs.wps.com/l/sIPDAvJVrs_qDpgY?v=v2'>
                 Uzb
@@ -90,6 +86,10 @@ export const Contract = ({contract , setContract }) => {
           <Link className='shartnoma-link' target="_blank" to='https://sg.docs.wps.com/l/sIKPAvJVr5vqDpgY?v=v2'>
                 Rus
           </Link>
+          <label className="checkLabel" htmlFor="confirm">
+            <input className="checkbox" type="checkbox" id="myCheckbox" onChange={handleCheckboxChange} name="confirm" />
+            Ha, tanishdim
+          </label>
 
           <button id="myButton" disabled={!isChecked} onClick={handleSubmit} className="btn btn-primary ok" type="submit">Ok</button>
       </div>
