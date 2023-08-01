@@ -46,6 +46,11 @@
   margin: 5px 0 0 0;
 }
 
+.contract-link{
+  display:inline-block;
+  margin-right: 5px;
+}
+
 /* ===================== responsive ============ */
 
 @media screen and (max-width: 1000px) {

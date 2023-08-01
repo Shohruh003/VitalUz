@@ -79,7 +79,7 @@ export const Contract = ({contract , setContract }) => {
       className={`overlay position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center ${!contract && 'd-none'}`}>
       <div className="modal-main guvohnomaModal">
           <p>Vital World korxonasi shartnomasi bilan tanishish</p>
-          <p>Tanishaman:</p>
+          <p className="contract-link">Tanishaman:</p>
           <Link className='shartnoma-link' target="_blank" to='https://sg.docs.wps.com/l/sIPDAvJVrs_qDpgY?v=v2'>
                 Uzb
           </Link>
