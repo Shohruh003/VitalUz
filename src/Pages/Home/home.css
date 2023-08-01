@@ -186,10 +186,6 @@
     height: 200px;
   }
 
-  .accordion-listItem p {
-    font-size: 12px;
-  }
-
   .accordion-name{
     font-size: 18px;
   }
@@ -212,10 +208,6 @@
   .WaterImg {
     width: 350px;
     height: 175px;
-  }
-
-  .accordion-listItem p {
-    font-size: 10px;
   }
 
   .button{
@@ -249,11 +241,5 @@
 
   .home-text , .home-bigtext{
     font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .accordion-listItem p {
-    font-size: 8px;
   }
 }

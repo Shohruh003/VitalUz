@@ -104,10 +104,6 @@ export const Home = () => {
   localStorage.setItem('isDivVisible', JSON.stringify(true));  
 
         
-    if (client?.signed === !true) {
-      setContract(true)
-
-    } else {
       handleStart()
       setIsDivVisible(true)
       document.getElementById("quantity").value = "";
@@ -138,7 +134,6 @@ export const Home = () => {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-    }
   }
 
   return (

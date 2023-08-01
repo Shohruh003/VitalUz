@@ -1,11 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./modal.css";
 import { Check } from "../../Hooks/Check";
 import { Link } from "react-router-dom";
+import { Client } from "../../Hooks/Client";
 
-export const Contract = ({contract , setContract}) => {
-  const queryParameters = new URLSearchParams(window.location.search)
-  const code = queryParameters.get("code")
+export const Contract = ({contract , setContract }) => {
+  const queryParameter = new URLSearchParams(window.location.search)
+  const code = queryParameter.get("code")
+  const {client, setClient} = Client()
+  console.log(client);
 
   const {isChecked, setIsChecked} = Check()
 
@@ -41,7 +44,6 @@ export const Contract = ({contract , setContract}) => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    if (isChecked) {
       var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", "Basic UGxhbnNoZXRVc2VyOlVTUkA2NTAxNTU5");
@@ -64,14 +66,10 @@ export const Contract = ({contract , setContract}) => {
     
     fetch("https://flashcloud.uz/Vital_Planshet/hs/site/counterparty/info", requestOptions)
       .then(response => response.text())
-      .then(result => console.log(result))
+      .then(result => setClient(result))
       .catch(error => console.log('error', error));
 
     setContract(false)
-    }
-
-window.location.reload();
-
   }
 
   return (
