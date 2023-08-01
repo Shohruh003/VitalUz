@@ -86,7 +86,7 @@ export const Contract = ({contract , setContract }) => {
           <Link className='shartnoma-link' target="_blank" to='https://sg.docs.wps.com/l/sIKPAvJVr5vqDpgY?v=v2'>
                 Rus
           </Link>
-          <label className="checkLabel" htmlFor="confirm">
+          <label className="checkLabel mt-2" htmlFor="confirm">
             <input className="checkbox" type="checkbox" id="myCheckbox" onChange={handleCheckboxChange} name="confirm" />
             Ha, tanishdim
           </label>
