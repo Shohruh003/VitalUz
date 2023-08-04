@@ -20,7 +20,7 @@ export const Public = () => {
         loading?
         <video className='loader' src={Loading} autoPlay loop muted/>
         :
-        <Contract contract={contract} setContract={setContract}/>
+          <Contract contract={contract} setContract={setContract}/>
       }
     </div>
   )

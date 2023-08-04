@@ -1,0 +1,18 @@
+.sertifikat {
+  padding: 20px 30px 0 30px;
+}
+
+h3, h4 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+thead {
+  text-align: center;
+}

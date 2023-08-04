@@ -8,7 +8,6 @@ export const Contract = ({contract , setContract }) => {
   const queryParameter = new URLSearchParams(window.location.search)
   const code = queryParameter.get("code")
   const {client, setClient} = Client()
-  console.log(client);
 
   const {isChecked, setIsChecked} = Check()
 
@@ -80,10 +79,10 @@ export const Contract = ({contract , setContract }) => {
       <div className="modal-main guvohnomaModal">
           <p>Vital World korxonasi shartnomasi bilan tanishish</p>
           <p className="contract-link">Tanishaman:</p>
-          <Link className='shartnoma-link' target="_blank" to='https://sg.docs.wps.com/l/sIPDAvJVrs_qDpgY?v=v2'>
+          <Link className='shartnoma-link' to={{ pathname: "/uzb", search: window.location.search }}>
                 Uzb
           </Link>
-          <Link className='shartnoma-link' target="_blank" to='https://sg.docs.wps.com/l/sIKPAvJVr5vqDpgY?v=v2'>
+          <Link className='shartnoma-link' to={{ pathname: "/rus", search: window.location.search }}>
                 Rus
           </Link>
           <label className="checkLabel mt-2" htmlFor="confirm">
