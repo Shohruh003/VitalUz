@@ -5,28 +5,30 @@
   width: 200px;
   padding: 10px 7px;
   border: 1px solid #4973ff;
-  background-color: rgba(73, 115, 255, 0.7);
+  background-color: rgba(73, 115, 255, 0.5);
   border-radius: 20px;
 }
 
 .timeOut p {
   font-size: 20px;
   font-weight: bold;
+  color:white;
 }
 
 .timeOut button {
   padding: 5px 10px;
   border-radius: 20px;
   border: none;
-  background-color: rgb(203, 92, 92);
+  background-color:rgb(49, 71, 142);
+  color: white;
 }
 
 .timeOut button:hover {
-  background-color: rgb(213, 110, 110);
+  background-color: rgba(49, 71, 142, 0.7);
 }
 
 .timeOut button:active {
-  background-color: rgb(219, 128, 128);
+  background-color: rgba(49, 71, 142, 0.5);
 }
 
 .timeOut .timeOut-btn {
@@ -49,22 +51,7 @@
 
 @media screen and (max-width: 600px) {
 
-  .timeOut p {
-    font-size: 14px;
-  }
-
   .timeOut button {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  
-  .timeOut p {
-    font-size: 10px;
-  }
-
-  .timeOut button {
-    font-size: 10px;
+    font-size: 16px;
   }
 }

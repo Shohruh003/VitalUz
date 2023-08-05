@@ -6,7 +6,6 @@ export const SerRus = () => {
   const queryParameters = new URLSearchParams(window.location.search)
   const code = queryParameters.get("code")
   const {client} = Client()
-  console.log(client);
   return (
     <div className='sertifikat'>
       <h3>Договор № {code} <br /> <span>(поставки)</span></h3>
