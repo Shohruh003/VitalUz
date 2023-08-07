@@ -9,6 +9,7 @@ export const Header = () => {
   const queryParameters = new URLSearchParams(window.location.search)
   const code = queryParameters.get("code")
   const {client} = Client()
+  console.log(client);
 
 
   return (
@@ -19,7 +20,7 @@ export const Header = () => {
             <img className='headVater' src={HeaderVital} alt="Header-water" width='700' height='300'/>
           </div>
           <img className='headWater' src={HeadWater} alt="Header-water" />
-          <p className='header-text'>Договор купли продажи № {code} от {client.date} </p>
+          <p className='header-text'>Договор купли продажи № {code} от </p>
         </div>
     </div>
   )
