@@ -9,8 +9,6 @@ export const Header = () => {
   const queryParameters = new URLSearchParams(window.location.search)
   const code = queryParameters.get("code")
   const {client} = Client()
-  console.log(client);
-
 
   return (
     <div className='header'>
