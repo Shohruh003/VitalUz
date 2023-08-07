@@ -52,7 +52,7 @@ export const Home = () => {
     
   const config = {
     method: 'post',
-    url: 'https://flashcloud.uz/Vital_Planshet/hs/site/counterparty/info',
+    url: 'https://vitalwater.uz/Vital_Planshet/hs/site/counterparty/info',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': 'Basic UGxhbnNoZXRVc2VyOlVTUkA2NTAxNTU5'
@@ -75,7 +75,7 @@ export const Home = () => {
   useEffect(() => {
     const purchase = {
       method: 'post',
-      url: 'https://flashcloud.uz/Vital_Planshet/hs/data/summary/get',
+      url: 'https://vitalwater.uz/Vital_Planshet/hs/data/summary/get',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Basic UGxhbnNoZXRVc2VyOlVTUkA2NTAxNTU5'
@@ -130,7 +130,7 @@ export const Home = () => {
         redirect: 'follow'
       };
 
-      fetch("https://flashcloud.uz/Vital_Planshet/hs/site/order/post", requestOptions)
+      fetch("https://vitalwater.uz/Vital_Planshet/hs/site/order/post", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));

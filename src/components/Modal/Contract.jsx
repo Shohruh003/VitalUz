@@ -63,7 +63,7 @@ export const Contract = ({contract , setContract }) => {
       redirect: 'follow'
     };
     
-    fetch("https://flashcloud.uz/Vital_Planshet/hs/site/counterparty/info", requestOptions)
+    fetch("https://vitalwater.uz/Vital_Planshet/hs/site/counterparty/info", requestOptions)
       .then(response => response.text())
       .then(result => setClient(result))
       .catch(error => console.log('error', error));

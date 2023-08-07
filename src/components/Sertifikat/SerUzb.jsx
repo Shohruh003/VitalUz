@@ -1,16 +1,18 @@
+import { Client } from '../../Hooks/Client'
 import './sertifikat.css'
 import { Table } from 'react-bootstrap'
 
 export const SerUzb = () => {
   const queryParameters = new URLSearchParams(window.location.search)
   const code = queryParameters.get("code")
+  const {client} = Client()
   
   return (
     <div className='sertifikat'>
        <h3>Shartnoma raqami {code} <br /> <span>(ta'minot)</span></h3>
        <p className='date'>
          <span> Toshkent.</span>
-         {/* <span>24.07.2023</span> */}
+         <span>{client.date}</span>
        </p>
 
        <p>MCH "VITAL WORLD" bundan keyin "Yetkazib beruvchi" deb yuritiladi, bosh direktor Usmanxo'jaev S.F. bir tomondan, Nizom asosida ish yurituvchi, boshqa tomondan, _____________ asosida ish yurituvchi _____________________________________ vakili, bundan keyin “Xaridor” deb yuritiladigan _________________________________, boshqa tomondan, ushbu shartnomani quyidagicha tuzdilar:</ p>
