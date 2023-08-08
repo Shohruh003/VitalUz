@@ -8,6 +8,9 @@ import { Check } from '../../Hooks/Check'
 import { TrueModal } from '../../components/Modal/TrueModal'
 import TimeOut from '../../components/TimeOut/TimeOut'
 import { Client } from '../../Hooks/Client'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const Home = () => {
 
@@ -15,14 +18,6 @@ export const Home = () => {
   const [deliveryTime, setDeliveryTime] = useState(
     localStorage.getItem("count") || 0
   );
-
-
-  const handleStart =() => {
-    localStorage.setItem("count", new Date().getTime() + countdown);
-    setDeliveryTime(new Date().getTime() + countdown);
-  };
-
-
   const {isChecked} = Check()
   const [quantity, setQuantity] = useState();
   const [price, setPrice] = useState();
@@ -34,6 +29,10 @@ export const Home = () => {
   const queryParameters = new URLSearchParams(window.location.search)
   const code = queryParameters.get("code")
 
+  const handleStart =() => {
+    localStorage.setItem("count", new Date().getTime() + countdown);
+    setDeliveryTime(new Date().getTime() + countdown);
+  };
 
 
   const handlePriceChange = (event) => {
@@ -41,9 +40,6 @@ export const Home = () => {
   };
 
   const handleQuantityChange = (event) => {
-    if (event.target.value < 3) {
-      event.target.value = 3  
-    }
     setQuantity(event.target.value);
     setPrice(event.target.value * client?.price);
   };
@@ -101,10 +97,9 @@ export const Home = () => {
 
   const orderSubmit = (event) => {
     event.preventDefault()
-  localStorage.setItem('isDivVisible', JSON.stringify(true));  
-
-        
-      handleStart()
+  if (quantity >= 3) {
+    localStorage.setItem('isDivVisible', JSON.stringify(true));  
+    handleStart()
       setIsDivVisible(true)
       document.getElementById("quantity").value = "";
       document.getElementById("price").value = "";
@@ -134,6 +129,12 @@ export const Home = () => {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
+  } else {
+    toast.warning('Eng kam 3 ta buyurtma bera olasiz !', {
+      className: 'custom-toast-warning',
+    });
+    setIsDivVisible(false)
+  }
   }
 
   return (
@@ -247,13 +248,15 @@ export const Home = () => {
                 <div className='form-group'>
                   <div className='form-input'>
                     <label className='mb-1' htmlFor="quantity">Miqdori</label>
-                    <input className='form-control mb-4' type="number" name="number" placeholder='miqdori' id="quantity" defaultValue={quantity} onChange={handleQuantityChange} min={3} />
+                    <input className='form-control mb-4' type="number" name="number" placeholder='miqdori' id="quantity" value={quantity} onChange={handleQuantityChange} min={3} />
+              <ToastContainer />
+
                   </div>
               
 
                   <div className='form-input'>
                     <label className='mb-1' htmlFor="price">Narxi</label>
-                    <input className='form-control mb-4' type="number" name="cost" placeholder='narxi' id="price" defaultValue={price} onChange={handlePriceChange} readOnly />
+                    <input className='form-control mb-4' type="number" name="cost" placeholder='narxi' id="price" value={price} onChange={handlePriceChange} readOnly />
                   </div>
                 </div>
 

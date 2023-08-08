@@ -162,6 +162,11 @@
   font-weight: bold;
 }
 
+.custom-toast-warning {
+  background-color: rgba(73, 115, 255, 0.8) !important;
+  color:#fff !important;
+}
+
 /* ===================== responsive ======================== */
 
 @media screen and (max-width: 770px) {
