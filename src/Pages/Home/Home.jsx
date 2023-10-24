@@ -11,7 +11,6 @@ import { Client } from '../../Hooks/Client'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 export const Home = () => {
 
   const [countdown, setCountdown] = useState(36 * 60 * 60 * 1000);
@@ -78,8 +77,8 @@ export const Home = () => {
       },
       data: JSON.stringify({
         "auth": {
-            "login": "vital002",
-            "password": "water01"
+            "login": "site_user",
+            "password": "x]sh9fD/mSZGHQ=V"
         },
         "counterparty": {
           
