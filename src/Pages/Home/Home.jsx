@@ -244,6 +244,7 @@ export const Home = () => {
                         <td>{e?.vozvrat_tari}</td>
                       </tr>
                     ))}
+                    {console.log(buy, "buy")}
                     <tr>
                       <td rowSpan={2}>Kolichestvo 1</td>
                       <td>{buy?.kolichestvo}</td>
