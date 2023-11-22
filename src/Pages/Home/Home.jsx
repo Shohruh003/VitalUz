@@ -92,6 +92,8 @@ export const Home = () => {
     axios(purchase)
       .then((response) => setBuy(response.data))
       .catch((error) => console.log("error", error));
+
+    console.log("buy data", buy)
   }, []);
 
   const orderSubmit = (event) => {
@@ -242,6 +244,11 @@ export const Home = () => {
                         <td>{e?.vozvrat_tari}</td>
                       </tr>
                     ))}
+                    <tr>
+                      <td rowSpan={2}>Jami</td>
+                      <td>{}</td>
+                      <td></td>
+                    </tr>
                   </tbody>
                 </Table>
               </Accordion.Body>
