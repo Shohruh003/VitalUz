@@ -90,11 +90,14 @@ export const Home = () => {
     };
 
     axios(purchase)
-      .then((response) => setBuy(response.data))
+      .then((response) =>{
+        console.log(response.data,"dddd")
+         setBuy(response.data)})
       .catch((error) => console.log("error", error));
 
-    console.log("buy data", buy)
+    
   }, []);
+  console.log("buy data", buy)
 
   const orderSubmit = (event) => {
     event.preventDefault();
