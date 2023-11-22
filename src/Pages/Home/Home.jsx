@@ -246,6 +246,7 @@ export const Home = () => {
                     ))}
                     <tr>
                       <td rowSpan={2}>Soni</td>
+                      <td></td>
                       <td>{buy?.itog?.kolichestvo}</td>
                       <td></td>
                     </tr>
