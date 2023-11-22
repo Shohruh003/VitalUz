@@ -45,7 +45,7 @@ export const Home = () => {
   };
 
   useEffect(() => {
-    console.log(modal,"modal")
+    console.log(modal, "modal");
     const config = {
       method: "post",
       url: "https://vitalwater.uz/Vital_Planshet/hs/site/counterparty/info",
@@ -90,14 +90,11 @@ export const Home = () => {
     };
 
     axios(purchase)
-      .then((response) =>{
-        console.log(response.data,"dddd")
-         setBuy(response.data)})
+      .then((response) => {
+        setBuy(response.data);
+      })
       .catch((error) => console.log("error", error));
-
-    
   }, []);
-  console.log("buy data", buy)
 
   const orderSubmit = (event) => {
     event.preventDefault();
@@ -247,10 +244,9 @@ export const Home = () => {
                         <td>{e?.vozvrat_tari}</td>
                       </tr>
                     ))}
-                    {console.log(buy, "buy")}
                     <tr>
-                      <td rowSpan={2}>Kolichestvo 1</td>
-                      <td>{buy?.kolichestvo}</td>
+                      <td rowSpan={2}>Soni</td>
+                      <td>{buy?.itog?.kolichestvo}</td>
                       <td></td>
                     </tr>
                   </tbody>
@@ -258,11 +254,10 @@ export const Home = () => {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          
 
           <div className="liquid-div">
-          {modal ? <OrderModal setModal={setModal} />:null}
-          
+            {modal ? <OrderModal setModal={setModal} /> : null}
+
             <h2 className="home-heading">Buyurtma berish</h2>
             <img
               className="WaterImg"
