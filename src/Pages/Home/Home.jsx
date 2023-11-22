@@ -245,7 +245,7 @@ export const Home = () => {
                       </tr>
                     ))}
                     <tr>
-                      <td rowSpan={2}>Kolichestvo</td>
+                      <td rowSpan={2}>Kolichestvo 1</td>
                       <td>{buy?.kolichestvo}</td>
                       <td></td>
                     </tr>
