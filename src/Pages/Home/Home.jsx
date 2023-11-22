@@ -245,8 +245,8 @@ export const Home = () => {
                       </tr>
                     ))}
                     <tr>
-                      <td rowSpan={2}>Jami</td>
-                      <td>{}</td>
+                      <td rowSpan={2}>Kolichestvo</td>
+                      <td>{buy?.kolichestvo}</td>
                       <td></td>
                     </tr>
                   </tbody>
