@@ -248,7 +248,7 @@ export const Home = () => {
                       <td></td>
                       <td>Soni</td>
                       <td>{buy?.itog?.kolichestvo}</td>
-                      <td></td>
+                      <td>{buy?.itog?.vozvrat_tari}</td>
                     </tr>
                   </tbody>
                 </Table>
