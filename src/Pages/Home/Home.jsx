@@ -250,6 +250,12 @@ export const Home = () => {
                       <td>{buy?.itog?.kolichestvo}</td>
                       <td>{buy?.itog?.vozvrat_tari}</td>
                     </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td>{buy?.itog}</td>
+                      <td></td>
+                    </tr>
                   </tbody>
                 </Table>
               </Accordion.Body>
