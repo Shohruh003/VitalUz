@@ -253,7 +253,7 @@ export const Home = () => {
                     <tr>
                       <td></td>
                       <td></td>
-                      <td>{buy?.itog}</td>
+                      <td>itog {console.log(buy?.itog, "itog")} </td>
                       <td></td>
                     </tr>
                   </tbody>
