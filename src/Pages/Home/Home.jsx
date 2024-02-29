@@ -252,7 +252,7 @@ export const Home = () => {
                     </tr>
                     <tr>
                       <td></td>
-                      <td></td>
+                      <td>Bo'sh idishlar qoldig'i </td>
                       <td>{buy?.saldo_konets?.kolichestvo}</td>
                       <td></td>
                     </tr>
