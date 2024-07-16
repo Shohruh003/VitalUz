@@ -336,7 +336,7 @@ export const Home = () => {
             tutilgan tartibda va muddatlarda Tovar haqini to'lashi shart.
             <br /> <br />
             Mazkur Shartnoma bo‘yicha o‘tkazilgan Tovar va yetkazib berish
-            xizmatlari narxi: {client?.price} (Yigirma sakkiz ming) so‘m.
+            xizmatlari narxi: {client?.price} (o'ttiz ming) so‘m.
             <br />
             <br />
             To'lov sanasi Xaridor tomonidan sotuvchiga naqd pul o'tkazilgan sana
