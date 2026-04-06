@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://vital-water.uz/$1",
+      "permanent": true
+    }
+  ]
+}
